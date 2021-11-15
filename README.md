@@ -4,7 +4,7 @@ img_deg is a command-line tool that allows you, as the name suggests, degrade im
 
 ## Dependencies
 
-This program requires [libvips](../libvips/libvips) to function properly. Before installing this, please make sure you have vips installed on your machine. 
+This program requires [libvips](../../../../libvips/libvips) to function properly. Before installing this, please make sure you have vips installed on your machine. 
 
 ## Usage
 If successfully built, you will now have an executable img_deg in your directory.
