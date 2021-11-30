@@ -10,7 +10,7 @@ bool Degrader::is_square(VImage in){
         cout << "It's a square";
         return true;
     } else {
-        cout << "Not a square...sending to cropper" << "\n";
+        cout << "Not a square" << "\n";
         return false;
     }
 }
@@ -29,11 +29,6 @@ void Degrader::img_specs(VImage in, string file_name){
     cout << "The height of the image is: " << h << "\n";
     cout << "The width is: " << w << "\n";
     file_size(file_name);
-}
-
-VImage Degrader::cropper(VImage in, double left, double top, double w, double h){
-  VImage out = in.crop(left, top, w, h);
-  return out;
 }
 
 VImage Degrader::zoom(VImage in, int x){
