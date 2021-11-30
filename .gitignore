@@ -31,4 +31,9 @@
 *.out
 *.app
 
+venv
+.venv
 
+#images
+*.jpg
+*.png
