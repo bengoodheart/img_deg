@@ -4,7 +4,11 @@ img_deg is a command-line tool that allows you, as the name suggests, degrade im
 
 ## Dependencies
 
+<<<<<<< HEAD
+This program requires [libvips](../../libvips/libvips) to function properly. Before installing this, please make sure you have vips installed on your machine. 
+=======
 This program requires [libvips](../../../../libvips/libvips) to function properly. Before installing this, please make sure you have vips installed on your machine. 
+>>>>>>> 800d90d2b1523b9a84f941f0c3d6012392bdde44
 
 ## Usage
 If successfully built, you will now have an executable img_deg in your directory.
@@ -19,9 +23,22 @@ The **quality** argument is between 1 - 75. The quality argument is essentially 
 
 The **blur_amount** argument is between 0 - 100. This blurs it.
 
-The **zoom amount** doesn't really matter and I think I'm going to ditch it anyway.
+The **zoom amount** takes an integer between 1 and 10, and this determines the amount it will zoom. By default, the zoom will always focus on the top-left, as the default coordinates are [0,0]. This can be changed in degrader.cpp by changing two arguments in the function:
 
-Additionally, the program will output some helpful info on the specifications of the images. It will also, for some reasn, declare a segmentation fault.
+```
+VImage Degrader::resize(VImage original, VImage degraded){
+    double w = original.width();
+    double h = original.height();
+
+    VImage cropped = degraded.crop(0,0, w, h); //the first two values here can be fine tuned based on your needs
+
+    return cropped;
+}
+```
+
+ Play around with it! After changing the values, re-make the executable and go to town. 
+
+Additionally, the program will output some helpful info on the specifications of the images. It will also, for some reason, declare a segmentation fault. I am not sure what this is about - if you have any insight please drop me a line or submit a pull request! 
 
 ## Installation
 
