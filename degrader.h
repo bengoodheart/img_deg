@@ -14,4 +14,5 @@ class Degrader{
         VImage cropper(VImage in, double left, double top, double w, double h);
         VImage zoom(VImage in, int x);
         VImage blur(VImage in, double sigma);
+        VImage resize(VImage original, VImage degraded);
 };

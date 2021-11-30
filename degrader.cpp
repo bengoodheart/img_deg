@@ -49,3 +49,12 @@ VImage Degrader::blur(VImage in, double sigma){
     
     return blurred;
 }
+
+VImage Degrader::resize(VImage original, VImage degraded){
+    double w = original.width();
+    double h = original.height();
+
+    VImage cropped = degraded.crop(0,0, w, h); //the first two values here can be fine tuned based on your needs
+
+    return cropped;
+}

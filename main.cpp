@@ -26,8 +26,8 @@ int main(int argc, char **argv){
   }
 
   int zoom_amount = stoi(argv[5]);
-  if(zoom_amount < 0 || zoom_amount > 5){
-    vips_error_exit("Error! You put in an integer either below zero or above 5");
+  if(zoom_amount < 1 || zoom_amount > 10){
+    vips_error_exit("Error! You must enter an integer between one and 10. If you want no zoom, enter 1.");
   }
 
 
@@ -43,29 +43,17 @@ int main(int argc, char **argv){
   printf ("width = %d\n", in.width ());
 
 
-  /** Turn into a square
-  if (deg.is_square(in) != true){
-    double w = in.width();
-    double h = in.height();
-    double top = h/(w/h);
-    double left = w/(w/h);
-    cout << left << "\n";
-    in = deg.cropper(in, left, top, 10, 500);
-  } 
-  **/
-
 
   deg.img_specs(in, argv[1]);
   VImage blurred = deg.blur(in, blur_amount);
   VImage out = deg.zoom(blurred, zoom_amount);
   
-  //img specs again, write a block tosee if the shit is too big, if it is they gotta resize or crop auttomatically
-  // out = deg.cropper()
+  VImage cropped = deg.resize(in, out);
 
-  out.jpegsave(argv[2], VImage::option ()-> set ("Q", qual_num));    //The Q option refers to the quality, default is 75
+  cropped.jpegsave(argv[2], VImage::option ()-> set ("Q", qual_num));    //The Q option refers to the quality, default is 75
 
 
-  deg.img_specs(out, argv[2]);
+  deg.img_specs(cropped, argv[2]);
   vips_shutdown ();
   
   
