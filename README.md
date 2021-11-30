@@ -41,13 +41,13 @@ Additionally, the program will output some helpful info on the specifications of
 To use install simply make the repo
 
 ```
-make
+make -B
 ```
 
 ## Example
 
 ```
-./img_deg lena.jpg lena2.jpg 1 100 4
+./img_deg lena.jpg lena2.jpg 1 55 2 
 ```
 
 
