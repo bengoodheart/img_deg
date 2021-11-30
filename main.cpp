@@ -48,7 +48,7 @@ int main(int argc, char **argv){
   VImage blurred = deg.blur(in, blur_amount);
   VImage out = deg.zoom(blurred, zoom_amount);
   
-  VImage cropped = deg.resize(in, out);
+  VImage cropped = deg.cropper(in, out);
 
   cropped.jpegsave(argv[2], VImage::option ()-> set ("Q", qual_num));    //The Q option refers to the quality, default is 75
 

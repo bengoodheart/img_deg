@@ -13,5 +13,5 @@ class Degrader{
         void img_specs(VImage in, string file_name);
         VImage zoom(VImage in, int x);
         VImage blur(VImage in, double sigma);
-        VImage resize(VImage original, VImage degraded);
+        VImage cropper(VImage original, VImage degraded);
 };
