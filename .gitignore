@@ -31,11 +31,4 @@
 *.out
 *.app
 
-#Python
-venv
 
-#Images
-*.jpg
-*.png
-
-*.dSYM 
