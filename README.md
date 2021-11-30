@@ -20,6 +20,7 @@ The **quality** argument is between 1 - 75. The quality argument is essentially 
 The **blur_amount** argument is between 0 - 100. This blurs it.
 
 The **zoom amount** takes an integer between 1 and 10, and this determines the amount it will zoom. By default, the zoom will always focus on the top-left, as the default coordinates are [0,0]. This can be changed in degrader.cpp by changing two arguments in the function:
+
 ```
 VImage Degrader::resize(VImage original, VImage degraded){
     double w = original.width();
